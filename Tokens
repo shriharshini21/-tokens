@@ -1,0 +1,11 @@
+function(user, context, callback) {
+
+  // add custom claims to Access Token and ID Token
+  context.accessToken['http://foo/bar'] = 'value';
+  context.idToken['http://fiz/baz'] = 'some other value';
+
+  // change scope
+  context.accessToken.scope = ['array', 'of', 'strings'];
+
+  callback(null, user, context);
+}
